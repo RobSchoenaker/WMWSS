@@ -1,0 +1,21 @@
+# git ignore file
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+release
+debug
+.vs/
+
+packages/*
+!packages/repositories.config
+!/node_modules*
+!/bower_components*
+project.lock.json
+node_modules
+appSettings.txt
+applicationhost.config
+*.nupkg
+bower_components
+logs/

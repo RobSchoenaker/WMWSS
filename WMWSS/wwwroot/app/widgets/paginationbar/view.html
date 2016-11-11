@@ -1,0 +1,10 @@
+<div data-bind="if: showPager" class="pagination-bar text-center">
+  <ul class="pagination">
+    <li data-bind="visible: previousVisible"><a class="pagination-btn" data-bind="text: settings.previousText, attr: {href: getUrl(previousPage())}"></a></li>
+    <!-- ko foreach: pages -->
+    <li class="active" data-bind="if: $data == $parent.settings.page"><a data-bind="text: $data, attr: {href: $parent.getUrl($data)}"></a></li>
+    <li data-bind="if: $data !== $parent.settings.page"><a data-bind="text: $data, attr: {href: $parent.getUrl($data)}"></a></li>
+    <!-- /ko -->
+    <li data-bind="visible: nextVisible"><a class="pagination-btn" data-bind="text: settings.nextText, attr: {href: getUrl(nextPage())}"></a></li>
+  </ul>
+</div>

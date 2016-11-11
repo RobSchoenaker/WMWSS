@@ -1,0 +1,44 @@
+﻿<div class="inner-box">
+  <h2 class="title-2"><i class="icon-folder-close"></i> <span data-bind="text: tt('title')"></span></h2>
+  <div class="table-responsive" data-bind="if: totalCount">
+    <table id="addManageTable" class="table table-striped table-bordered add-manage-table table demo footable-loaded footable" data-filter="#filter" data-filter-text-only="true">
+      <thead>
+        <tr>
+          <th data-bind="text: tt('photo')"></th>
+          <th data-sort-ignore="true" data-bind="text: tt('details')"></th>
+          <th data-sort-ignore="true" data-bind="text: tt('result')"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ko foreach: advertisements -->
+        <tr>
+          <td style="width:14%" class="add-img-td"><a data-bind="attr : { title: title, href: url}"><img class="thumbnail img-responsive" data-bind="attr: {src: mainImageUrl, alt: title}"></a></td>
+          <td style="width:58%" class="ads-details-td">
+            <div>
+              <p>
+                <strong>
+                  <a data-bind="text: title, attr : { title: title, href: url}">
+                  </a>
+                </strong>
+              </p>
+              <p>
+                <strong><i class="icon-clock"></i>&nbsp;</strong><span data-bind="text: createdText"></span>
+              </p>
+              <p>
+                <i class="icon-eye"></i> <strong>221</strong>&nbsp;<i class="icon-location-2"></i>&nbsp;<strong data-bind="text: city"></strong>
+              </p>
+            </div>
+          </td>
+          <td style="width:10%" class="action-td">
+            <div>
+              <p data-bind="text: $parent.getStateDescription($data)"></p>
+            </div>
+          </td>
+        </tr>
+        <!-- /ko -->
+      </tbody>
+    </table>
+  </div>
+  <div data-bind="paginationbar : {page : page(), totalCount: totalCount(), url: '#archief'}"></div>
+  <div data-bind="if: totalCount() == 0"><h3 data-bind="text: ttg('noDataAvailable')"></h3></div>
+</div>

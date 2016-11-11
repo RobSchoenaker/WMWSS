@@ -1,0 +1,26 @@
+﻿<div class="inner-box">
+  <h2 class="title-2"><i class="icon-th-thumb"></i> <span data-bind="html: title"></span></h2>
+
+  <div id="inhoud">
+    <!-- ko foreach: messages -->
+    <div data-bind="css: $parent.getCss($data)">
+      <div class="datum" data-bind="datetime: sent"></div>
+      <div class="inhoud" data-bind="text: message"></div>
+    </div>
+    <!-- /ko -->
+  </div>
+
+  <div class="clearfix"></div>
+  <hr />
+  <div class="row">
+    <div data-bind="textareainput : {valueField: message, fieldName : 'message', tt: tt, colLabel: 12, colInput: 12, rows: 5}"></div>
+  </div>
+  <div style="margin-top: 20px;">
+    <button class="pull-right btn btn-success" data-bind="click: sendCommand"><i class="fa fa-spinner fa-spin" data-bind="visible: sendCommand.isExecuting"></i><i class="icon-mail" data-bind="visible: !sendCommand.IsExecuting"></i> <span data-bind="text: tt('send')"></span></button>
+    <a data-bind="text: ttg('refresh') , click: refreshData"></a>
+    <!--<a href="#reportAdvertiser" data-toggle="modal" class="btn btn-danger"><i class="fa fa-exclamation"></i> <span data-bind="text: tt('reportAbuse')"></span></a>
+    <br />
+    <a style="font-weight:300" href="#" data-bind="text: tt('whatIsReportAbuse')"></a>-->
+  </div>
+
+</div>

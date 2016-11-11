@@ -1,0 +1,13 @@
+{
+  "modules": {
+    "login": {
+      "displayName": "Inloggen NL"
+    },
+    "createAccount": {
+      "displayName": "Aanmaken account NL"
+    },
+    "companies": {
+      "displayName": "Bedrijven"
+    }
+  }
+}

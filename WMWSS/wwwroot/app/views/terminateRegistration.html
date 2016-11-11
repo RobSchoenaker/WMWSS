@@ -1,0 +1,17 @@
+﻿<div class="inner-box">
+  <h2 class="title-2"><i class="icon-folder-close"></i> <span data-bind="text: tt('title')"></span></h2>
+  <form class="form-horizontal" role="form" action="~/api/account/upatepassword">
+    <p data-bind="html: tt('doYouWantToTerminateYourAccount')"></p>
+    <label class="radio-inline">
+      <input type="radio" name="terminateRadio" data-bind="checked: shouldTerminate, checkedValue: true"> <span data-bind="text: ttg('yes')"></span>
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="terminateRadio"  data-bind="checked: shouldTerminate, checkedValue: false"> <span data-bind="text: ttg('no')"></span>
+    </label>
+    <div class="form-group" style="margin-top: 20px;">
+      <div class="col-sm-12">
+        <button class="btn btn-primary" data-bind="text: tt('terminateButton'), command: terminateCommand"></button>
+      </div>
+    </div>
+  </form>
+</div>

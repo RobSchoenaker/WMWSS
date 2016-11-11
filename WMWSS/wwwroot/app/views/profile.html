@@ -1,0 +1,51 @@
+﻿<div class="inner-box">
+  <div class="row">
+    <div class="col-md-5 col-xs-4 col-xxs-12">
+      <h3 class="no-padding text-center-480 useradmin">
+        <a href="">
+          <img class="userImg" data-bind="attr: {src : profileUrl}" alt="user"><span data-bind="displayName"></span>
+        </a>
+      </h3>
+    </div>
+  </div>
+  <hr />
+  <!-- ko if: idCustomerState == 1 -->
+  <div class="alert alert-warning pgray  alert-lg" role="alert">
+    <h2><i class="fa fa-warning"></i> Bevestig je registratie</h2>
+    <p>Je registratie is nog niet bevestigd. Geplaatste advertenties zijn slechts een week beschikbaar, totdat je je account bevestigt.</p>
+    <p>Controleer je mailbox voor de registratielink, of <a href="~/portal/opnieuw-bevestigen"><strong>klik hier</strong></a> om de e-mail nogmaals te versturen.</p>
+  </div>
+  <!-- /ko -->
+  <div id="accordion" class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title" data-bind="text: tt('personalInformationTitle')"></h4>
+      </div>
+      <div class="panel-collapse">
+        <div class="panel-body">
+          <form class="form-horizontal" role="form">
+            <div data-bind="textinput : {valueField: displayName, fieldName : 'displayName', tt: tt}"></div>
+            <div data-bind="textinput : {valueField: firstName, fieldName : 'firstName', tt: tt}"></div>
+            <div data-bind="textinput : {valueField: lastName, fieldName : 'lastName', tt: tt}"></div>
+            <div data-bind="textinput : {valueField: phoneNumber, fieldName : 'phoneNumber', tt: tt}"></div>
+            <div data-bind="validationElement: postalError">
+              <div data-bind="textinput : {valueField: postalCode, fieldName : 'postalCode', tt: tt}"></div>
+              <div data-bind="textinput : {valueField: houseNumber, fieldName : 'houseNumber', tt: tt}"></div>
+              <div data-bind="customvalidationmessage: {valueMessage: postalError}"></div>
+            </div>
+            <div data-bind="textinput : {valueField: houseNumberAddition, fieldName : 'houseNumberAddition', tt: tt}"></div>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9"></div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-default" data-bind="text: ttg('updateButton'), command: saveCommand"></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

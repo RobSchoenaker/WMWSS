@@ -1,0 +1,19 @@
+﻿<ul class="acc-list">
+  <!-- ko foreach: conversations -->
+  <li>
+    <div style="float: left;width: 40px;">
+      <div style="position: relative;width: 40px;height: 40px;">
+        <img style="width: 40px;height:40px;border-radius:3px;" data-bind="attr: {src : advertisement.mainImageUrl, alt: advertisement.title}">
+      </div>
+    </div>
+    <div style="min-height: 80px;margin-left:44px">
+      <a data-bind="attr: {href : $parent.getLink($data)}"}>
+        <div style="font-family:Roboto,sans-serif;font-style:normal;font-weight:300;font-size:16px;line-height:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 20px 5px 0;min-height:1.1em;" data-bind="text: advertisement.title"></div>
+        <div style="font-family: Roboto,sans-serif;font-style: normal;font-weight: 400;font-size: 12px;line-height: 16px;color: #9b9b9b;max-height: 2.5em;padding-right: 3em;overflow: hidden;">
+          <span style="margin-right: 5px;color: #333;font-weight: 700;" data-bind="text: customerDisplayName"></span>
+        </div>
+      </a>
+    </div>
+  </li>
+  <!-- /ko -->
+</ul>

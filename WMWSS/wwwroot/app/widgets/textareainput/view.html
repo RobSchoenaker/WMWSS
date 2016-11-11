@@ -1,0 +1,8 @@
+<div class="form-group" data-bind="validationElement: settings.valueField">
+  <label class="control-label p-l-0" data-bind="text: settings.labelText, attr : { for: settings.inputName}, css: cssLabel"></label>
+  <div data-bind="css: cssInputGroup">
+    <div class="fg-line">
+      <textarea class="form-control auto-size"  data-bind="value: settings.valueField, css: settings.css, attr: { type: settings.inputType, placeHolder: settings.placeHolder, id: settings.inputName}" data-autosize-on="true" style="overflow: hidden; word-wrap: break-word; height: 187px;"></textarea>
+    </div>
+  </div>
+</div>
