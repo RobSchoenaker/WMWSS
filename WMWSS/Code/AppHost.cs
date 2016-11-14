@@ -14,7 +14,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.Linq;
 using System.Text.RegularExpressions;
-using ServiceStack.Api.Swagger;
 using ServiceStack.Text;
 using System.Diagnostics;
 using System.IO;

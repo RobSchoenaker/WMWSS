@@ -1,5 +1,6 @@
 ﻿using ServiceStack;
-
+using System;
+using System.Diagnostics;
 
 namespace WMWSS.Services
 {
@@ -18,14 +19,21 @@ namespace WMWSS.Services
   public class WebPagesService: Service
   {
 
+    [DefaultView("Default")]
     public object Any(DefaultRequest request)
     {
 
-      Request.Items["View"] = "Default";
-      return new DefaultResult
+      return Request.ToOptimizedResultUsingCache(this.Cache, UrnId.CreateWithParts("15", "dummy"), TimeSpan.FromMilliseconds(20000), () =>
       {
+        return new DefaultResult
+        {
 
-      };
+        };
+
+      });
+
+
+      
 
 
 
